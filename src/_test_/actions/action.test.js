@@ -4,6 +4,7 @@ import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import * as actions from "../../Actions/actions";
 import DROPDOWN_STATE from "../../Actions/types";
+import ERROR_WHILE_FETCHING from "../../Actions/types";
 const middleware = [thunk];
 const mockStore = configureMockStore(middleware);
 const mock = new MockAdapter(axios);
@@ -32,8 +33,7 @@ describe("getCountry data in actions", () => {
     store.dispatch(actions.getCountryData()).then(() => {
       let expectedActions = [
         {
-          type: "ERROR_WHILE_FETCHING",
-          // payload: {},
+          type: ERROR_WHILE_FETCHING,
           payload: error,
         },
       ];

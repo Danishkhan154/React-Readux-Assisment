@@ -1,5 +1,6 @@
 import axios from "axios";
 import { DROPDOWN_STATE } from "./types";
+import { ERROR_WHILE_FETCHING } from "./types";
 
 export const getCountryData =
   (value = "charmeleon") =>
@@ -11,8 +12,7 @@ export const getCountryData =
       })
       .catch((error) => {
         dispatch({
-          type: "ERROR_WHILE_FETCHING",
-          // payload: {},
+          type: ERROR_WHILE_FETCHING,
           payload: error,
         });
       });

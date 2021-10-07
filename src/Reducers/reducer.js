@@ -1,4 +1,5 @@
 import { DROPDOWN_STATE } from "../Actions/types";
+import { ERROR_WHILE_FETCHING } from "../Actions/types";
 
 const initialState = {
   countryData: [],
@@ -10,7 +11,7 @@ const countryReducer = (state = initialState, action) => {
       let newState = { ...state };
       newState.countryData = action.payload;
       return newState;
-    case "ERROR_WHILE_FETCHING":
+    case ERROR_WHILE_FETCHING:
       return {
         ...state,
         data: false,

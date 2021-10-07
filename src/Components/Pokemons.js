@@ -6,9 +6,6 @@ import mockData from "../mockData/mockData";
 import DropDown from "./DropDown";
 
 export class Pokemons extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   state = {
     pokemonName: "charmeleon",
   };

@@ -29,8 +29,6 @@ describe("passing props", () => {
         },
       },
     ],
-
-    func: (fn) => fn,
   };
 
   it("should call getCountryData Function", () => {
@@ -43,18 +41,6 @@ describe("passing props", () => {
         target: { name: "charmeleon" },
       })
     );
-    expect(wrapper.find("getCountryData")).toEqual({});
-  });
-
-  it("renders inputfield for handleonchange", () => {
-    const wrapper = shallow(
-      <DropDown data={props} getCountryData={getCountryData} />
-    );
-    wrapper.find(`select`).simulate("change", {
-      preventDefault: (fn) => fn,
-      target: {
-        name: "charmeleon",
-      },
-    });
+    expect(wrapper.find("getCountryData")).toBeCalled;
   });
 });
