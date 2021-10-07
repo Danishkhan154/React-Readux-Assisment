@@ -14,12 +14,15 @@ export class Pokemons extends React.Component {
     const { getCountryData } = this.props;
     getCountryData(this.pokemonName);
   }
-
   render() {
     return (
       <div className="countries">
         <h1 className="heading">Select Your Pokemon :</h1>
-        <DropDown getCountryData={this.props.getCountryData} data={mockData} />
+        <DropDown
+          getCountryData={this.props.getCountryData}
+          data={mockData}
+          className="DropDown"
+        />
 
         <h2>Their abilities are :</h2>
 
